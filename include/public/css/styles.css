@@ -1,0 +1,425 @@
+/* Estilos personalizados para el panel de cliente */
+.cliente-panel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cliente-panel-tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.cliente-panel-tab {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1 1 auto;
+}
+
+.cliente-panel-tab.active {
+    color: #fff;
+    border-bottom: 3px solid #ECAD20;
+    background-color: #0E3950;
+}
+
+.cliente-panel-tab:hover {
+    color: #ECAD20;
+}
+
+.cliente-panel-content {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.cliente-panel-section {
+    display: none;
+}
+
+.cliente-panel-section.active {
+    display: block;
+}
+
+/* Estilos para el grid y las tarjetas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    
+    margin: 0 auto;
+}
+
+.grid > div {
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    text-align: left; /* Alineación del texto a la izquierda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para el diseño de dos columnas */
+    align-items: center; /* Centrar verticalmente */
+    gap: 1rem; /* Espacio entre el icono y el contenido */
+}
+
+.grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.grid > div a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: inherit; /* Heredar el color del texto */
+    display: flex; /* Para el diseño de dos columnas */
+    align-items: center; /* Centrar verticalmente */
+    gap: 1rem; /* Espacio entre el icono y el contenido */
+    width: 100%; /* Ocupar todo el ancho */
+}
+
+.grid > div .icon {
+    font-size: 2rem; /* Tamaño del icono */
+    color: #2563eb; /* Color del icono */
+}
+
+.grid > div h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #0E3950;
+}
+
+.grid > div p {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+    color: #4b5563;
+}
+
+.grid > div span {
+    font-weight: 600;
+}
+
+.text-blue-600 {
+    color: #0E3950;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+
+/* Estilos mejorados para mostrar proyectos */
+
+/* Mejoras al contenedor principal del proyecto */
+.proyecto-detalles {
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0E3950 0%, #0a2a3d 100%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-detalles:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.proyecto-detalles h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-detalles h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Mejoras a los c���rculos de estado */
+.estado-circulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.estado-circulos .circulo {
+    position: relative;
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.estado-circulos .circulo:hover {
+    transform: scale(1.1);
+}
+
+.estado-circulos .circulo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 10px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    margin-left: 0;
+}
+
+.estado-circulos .circulo:last-child::after {
+    display: none;
+}
+
+.estado-circulos .azul {
+    background: linear-gradient(145deg, #27ae60, #2ecc71);
+    z-index: 2;
+}
+
+.estado-circulos .gris {
+    background: linear-gradient(145deg, #7f8c8d, #95a5a6);
+    opacity: 0.7;
+}
+
+/* Estilo para el estado actual del proyecto */
+.proyecto-estado {
+    background: linear-gradient(145deg, #f39c12, #ECAD20);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 20px;
+    margin: 15px auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-estado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mejoras a los campos del proyecto */
+.proyecto-campos {
+    font-family: 'Montserrat', Arial, sans-serif;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.proyecto-campos:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-campos h3 {
+    text-align: center;
+    color: #0E3950;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ECAD20;
+}
+
+/* Mejoras al contenedor de columnas */
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    padding: 10px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.columna:hover {
+    background-color: #f1f3f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.columna strong {
+    font-weight: 700;
+    color: #0E3950;
+    margin-bottom: 5px;
+}
+
+/* Mejoras a la lista de observaciones */
+.observaciones-lista {
+    list-style-type: decimal;
+    margin: 20px 0;
+    padding: 0 0 0 20px;
+}
+
+.observaciones-lista li {
+    background-color: #fff;
+    border-left: 4px solid #ECAD20;
+    border-radius: 0 10px 10px 0;
+    margin: 12px 0;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.observaciones-lista li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.observaciones-lista li::before {
+    content: counter(list-item);
+    counter-increment: list-item;
+    position: absolute;
+    left: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-color: #ECAD20;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Mejoras al formulario de comentarios */
+.comentario-form {
+    margin-top: 25px;
+}
+
+.comentario-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+}
+
+.comentario-form textarea:focus {
+    border-color: #ECAD20;
+    box-shadow: 0 0 0 2px rgba(236, 173, 32, 0.25);
+    outline: none;
+}
+
+/* Mejoras a los botones */
+input[type="submit"] {
+    background: linear-gradient(145deg, #0E3950, #0a2a3d);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(145deg, #0a2a3d, #0E3950);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-campos .cambiar-estado-form {
+    text-align: right;
+    padding: 15px 10px 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+    
+    .estado-circulos .circulo {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+    
+    .proyecto-estado {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cliente-panel-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cliente-panel-tab {
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cliente-panel-tab.active {
+        border-left: 3px solid #ECAD20;
+        border-bottom: none;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+

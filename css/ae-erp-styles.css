@@ -1,0 +1,247 @@
+.cliente-panel-container {
+    display: flex;
+}
+.cliente-panel-sidebar {
+    width: 200px;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
+.cliente-panel-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.cliente-panel-sidebar li {
+    margin-bottom: 10px;
+}
+.cliente-panel-link {
+    text-decoration: none;
+    color: #0073aa;
+}
+.cliente-panel-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Ocultar la navegaci籀n entre entradas en los tipos de post 'propuesta' y 'orden-pago' */
+.single-propuesta .nav-previous,
+.single-propuesta .nav-next,
+.single-factura .nav-previous,
+.single-factura .nav-next,
+.single-notificacion .nav-previous,
+.single-notificacion .nav-next,
+.single-orden-pago .nav-previous,
+.single-orden-pago .nav-next {
+    display: none;
+}
+
+
+/* Estilos ventana de notificaci車n */
+
+.icono-notificacion-contenedor {
+    position: relative;
+    display: inline-block;
+}
+.icono-notificacion {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.icono-notificacion .dashicons {
+    font-size: 24px;
+    color: #ECAD20;
+}
+.icono-notificacion.tiene-notificaciones:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    animation: efecto-punto-rojo 1.5s infinite;
+}
+@keyframes efecto-punto-rojo {
+    0%, 100% {
+        transform: scale(1);
+        background-color: red;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: yellow;
+    }
+}
+.desplegable-notificaciones {
+    display: none; /* Por defecto oculto */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Ancho fijo para escritorio */
+    border-radius: 4px;
+    z-index: 1000;
+    opacity: 0; /* Transici車n de opacidad */
+    transform: translateY(-10px); /* Animaci車n de posici車n */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Efecto suave */
+}
+.desplegable-notificaciones.mostrar {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Aparece suavemente en su lugar */
+}
+.notificaciones-header {
+    background: #ECAD20;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.notificaciones-contenido {
+    max-height: 200px;
+    text-align: left;
+    overflow-y: auto;
+    padding: 10px;
+}
+.notificacion-item {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+.notificacion-item:last-child {
+    border-bottom: none;
+}
+.notificacion-item strong {
+    display: block;
+}
+.notificacion-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notificacion-item .ver-mas {
+    color: #fff; 
+    text-decoration: none;
+}
+.notificacion-item .ver-mas:hover {
+    color: #fff;
+}
+.notificaciones-footer {
+    text-align: center;
+    padding: 10px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.notificaciones-footer .ver-todas {
+    text-decoration: none;
+    color: #0E3950;
+    font-weight: bold;
+}
+.notificaciones-footer .ver-todas:hover {
+    color: #ECAD20;
+    text-decoration: none;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    .desplegable-notificaciones {
+        position: absolute;
+        right: -1%; /* Un poco de margen en m車viles */
+        max-width: 260px; /* Ocupar todo el ancho disponible */
+    }
+}
+
+/* Estilos p芍gina notificaciones */
+.notificaciones-listado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+.notificacion-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.notificacion-item:hover {
+    transform: translateY(-5px);
+    background: #fff;
+}
+.notificacion-item.Activa {
+    border-left: 5px solid #0E3950;
+}
+.notificacion-item.Inactiva {
+    border-left: 5px solid #bbb;
+}
+.notificacion-item button,
+.notificacion-item a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    color: white;
+    background: #0E3950;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.notificacion-item button:hover,
+.notificacion-item a:hover {
+    background: #ECAD20;
+    color: white;
+}
+
+/* Estilos pagina configuracion */
+.wpp-tabs {
+    display: flex;
+}
+
+.wpp-tabs-nav {
+    flex: 0 0 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid #ccc;
+}
+
+.wpp-tabs-nav li {
+    margin: 0;
+}
+
+.wpp-tabs-nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0073aa;
+    border-bottom: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+.wpp-tabs-nav a:hover,
+.wpp-tabs-nav a.active {
+    background: #e9e9e9;
+    font-weight: bold;
+}
+
+.wpp-tab-content {
+    flex: 1;
+    padding: 20px;
+    display: none;
+}
+
+.wpp-tab-content.active {
+    display: block;
+}
